@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <mopups:PopupPage
- xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+    x:Class="Maui_Fun.Views.AddItemPopupPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
-    x:Class="Maui_Fun.Views.AddItemPopupPage"
     xmlns:local="clr-namespace:Maui_Fun.Controls"
-    BackgroundColor="#80000000"
+    xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+    xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+    xmlns:vm="clr-namespace:Maui_Fun.ViewModels"
     Padding="20,10"
+    BackgroundColor="#80000000"
     CloseWhenBackgroundIsClicked="True">
 
     <mopups:PopupPage.Animation>
@@ -17,62 +18,60 @@
             PositionIn="Bottom"
             PositionOut="Center"
             ScaleIn="1"
-            ScaleOut="0.7"/>
+            ScaleOut="0.7" />
 
     </mopups:PopupPage.Animation>
-    <Border WidthRequest="350" HeightRequest="400"
-            HorizontalOptions="Center"
-            VerticalOptions="End"
-            StrokeShape="RoundRectangle 60,0,0,60"
-            Stroke="{StaticResource Secondary}"
-            BackgroundColor="{StaticResource Secondary}">
-        <StackLayout  VerticalOptions="FillAndExpand" >
-            <VerticalStackLayout Spacing="5" Padding="30,40,30,0">
+    <Border
+        BackgroundColor="{StaticResource Secondary}"
+        HeightRequest="400"
+        HorizontalOptions="Center"
+        Stroke="{StaticResource Secondary}"
+        StrokeShape="RoundRectangle 60,0,0,60"
+        VerticalOptions="End"
+        WidthRequest="350">
+        <StackLayout VerticalOptions="FillAndExpand">
+            <VerticalStackLayout Padding="30,40,30,0" Spacing="5">
                 <Label
+                    FontFamily="Geologica-Regular"
                     FontSize="17"
-                    FontFamily="Geologica-Regular"
-                    Text="Nova Tarefa"/>
+                    Text="Nova Tarefa" />
                 <VerticalStackLayout Margin="0,10,0,30">
-                    <local:UnderlineEntry PlaceholderColor="{StaticResource White}"/>
+                    <local:UnderlineEntry PlaceholderColor="{StaticResource White}" Text="{Binding Title}" />
                     <BoxView
-                        HorizontalOptions="FillAndExpand"
                         HeightRequest="1"
-                             Color="White"/>
+                        HorizontalOptions="FillAndExpand"
+                        Color="White" />
                 </VerticalStackLayout>
 
-                 <Label
-                    FontSize="15"
+                <Label
                     FontFamily="Geologica-Regular"
-                    Text="Notas"/>
+                    FontSize="15"
+                    Text="Notas" />
                 <VerticalStackLayout>
-                    <local:UnderlineEntry PlaceholderColor="{StaticResource White}"/>
+                    <local:UnderlineEntry PlaceholderColor="{StaticResource White}" Text="{Binding Description}" />
                     <BoxView
-                        HorizontalOptions="FillAndExpand"
                         HeightRequest="1"
-                             Color="White"/>
+                        HorizontalOptions="FillAndExpand"
+                        Color="White" />
                 </VerticalStackLayout>
 
-                <HorizontalStackLayout>
-
-
-                </HorizontalStackLayout>
+                <HorizontalStackLayout />
 
 
 
             </VerticalStackLayout>
-            
-            <Button
-                FontFamily="Geologica-Regular"
-                Text="Adicionar Tarefa"
-                HeightRequest="60"
-                CornerRadius="0"
-                VerticalOptions="EndAndExpand"
-                FontSize="16"
-                BackgroundColor="{StaticResource Primary}"
-                HorizontalOptions="FillAndExpand">
 
-            </Button>
-           
+            <Button
+                BackgroundColor="{StaticResource Primary}"
+                Command="{Binding NewItemCommand}"
+                CornerRadius="0"
+                FontFamily="Geologica-Regular"
+                FontSize="16"
+                HeightRequest="60"
+                HorizontalOptions="FillAndExpand"
+                Text="Adicionar Tarefa"
+                VerticalOptions="EndAndExpand" />
+
         </StackLayout>
 
     </Border>
