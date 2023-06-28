@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage
+ xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
+    x:Class="Maui_Fun.Views.AddItemPopupPage"
+    xmlns:local="clr-namespace:Maui_Fun.Controls"
+    BackgroundColor="#80000000"
+    Padding="20,10"
+    CloseWhenBackgroundIsClicked="True">
+
+    <mopups:PopupPage.Animation>
+        <mopupsanim:ScaleAnimation
+            DurationIn="400"
+            EasingIn="CubicOut"
+            PositionIn="Bottom"
+            PositionOut="Center"
+            ScaleIn="1"
+            ScaleOut="0.7"/>
+
+    </mopups:PopupPage.Animation>
+    <Border WidthRequest="350" HeightRequest="400"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            StrokeShape="RoundRectangle 60,0,0,60"
+            Stroke="{StaticResource Secondary}"
+            BackgroundColor="{StaticResource Secondary}">
+        <StackLayout  VerticalOptions="FillAndExpand" >
+            <VerticalStackLayout Spacing="5" Padding="30,40,30,0">
+                <Label
+                    FontSize="17"
+                    FontFamily="Geologica-Regular"
+                    Text="Nova Tarefa"/>
+                <VerticalStackLayout Margin="0,10,0,30">
+                    <local:UnderlineEntry PlaceholderColor="{StaticResource White}"/>
+                    <BoxView
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="1"
+                             Color="White"/>
+                </VerticalStackLayout>
+
+                 <Label
+                    FontSize="15"
+                    FontFamily="Geologica-Regular"
+                    Text="Notas"/>
+                <VerticalStackLayout>
+                    <local:UnderlineEntry PlaceholderColor="{StaticResource White}"/>
+                    <BoxView
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="1"
+                             Color="White"/>
+                </VerticalStackLayout>
+
+                <HorizontalStackLayout>
+
+
+                </HorizontalStackLayout>
+
+
+
+            </VerticalStackLayout>
+            
+            <Button
+                FontFamily="Geologica-Regular"
+                Text="Adicionar Tarefa"
+                HeightRequest="60"
+                CornerRadius="0"
+                VerticalOptions="EndAndExpand"
+                FontSize="16"
+                BackgroundColor="{StaticResource Primary}"
+                HorizontalOptions="FillAndExpand">
+
+            </Button>
+           
+        </StackLayout>
+
+    </Border>
+</mopups:PopupPage>
