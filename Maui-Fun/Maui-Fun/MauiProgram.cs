@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using Maui_Fun.Context;
 using Maui_Fun.Helpers.Interfaces;
 using Maui_Fun.Helpers.Services;
 using Maui_Fun.ViewModels;
@@ -30,8 +31,9 @@ public static class MauiProgram
                 fonts.AddFont("FontAwesomeSolid.otf", "FontAwesomeSolid");
 				
             });
+		builder.Services.AddSingleton<ItemRepository>();
 		builder.Services.AddSingleton<IPopupNavigation>(MopupService.Instance);
-		builder.Services.AddTransient<ListPage>();
+        builder.Services.AddTransient<ListPage>();
         builder.Services.AddTransient<ListViewModel>();
 
 #if DEBUG
