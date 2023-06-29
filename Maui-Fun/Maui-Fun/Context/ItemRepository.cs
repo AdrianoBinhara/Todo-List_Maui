@@ -56,7 +56,7 @@ namespace Maui_Fun.Context
 
         private bool DatabateExists()
         {
-            return _database is not null;
+            return _database.Table<Item>().Any();
         }
     }
 }

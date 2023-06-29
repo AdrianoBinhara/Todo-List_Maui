@@ -35,21 +35,21 @@ namespace Maui_Fun.Models
                 {
                      Title = "Academia",
                      Description = "Treino de peito",
-                     ScheduledDate = 18,
+                     ScheduledDate = dayOfMonth - 1,
                      Time = DateTime.Now
                 },
                 new Item
                 {
                      Title = "Jogar",
                      Description = "Valorant",
-                     ScheduledDate = 18,
+                     ScheduledDate = dayOfMonth - 1,
                      Time = DateTime.Now
                 },
                 new Item
                 {
                      Title = "Academia",
                      Description = "Treino de peito",
-                     ScheduledDate = 22,
+                     ScheduledDate = dayOfMonth - 1,
                      Time = DateTime.Now
                 },
                 new Item
