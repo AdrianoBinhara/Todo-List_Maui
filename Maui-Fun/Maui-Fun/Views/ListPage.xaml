@@ -82,7 +82,7 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </HorizontalStackLayout>
-
+// Ola thread
             <HorizontalStackLayout HorizontalOptions="End" Spacing="10">
                 <Label
                     x:Name="lbAll"
