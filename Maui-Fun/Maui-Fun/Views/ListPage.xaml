@@ -23,7 +23,7 @@
                 FontSize="Large"
                 FontFamily="Geologica-Bold"
                 Text="Todo List"/>
-<button Text=“oi”/>
+<Button Text=“Alteração”/>
             <HorizontalStackLayout
                 x:Name="StackLayoutWithViewModel"
                 HorizontalOptions="Center"
